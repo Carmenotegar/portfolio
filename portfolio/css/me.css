@@ -1,0 +1,372 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #E5D2F0;
+  color: var(--negro);
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Esto es un elemento SVG que lo utilizaremos cuando la pagina se haga responsive, y aparecera mostrandonos el menu de navegacion */
+.Header-svg{
+    width: 20px;
+    display: none;
+}
+/* Le damos a la etiqueta contenedora del Header un ancho y aparte le damos un margin para dar unos espacios al rededor */
+.Header{
+    width: 95%;
+    padding: 30px 60px 0 60px;
+}
+/* Damos al Header, un ancho y lo alineamos horizontalmente todas las etiquetas, poniendole espacios */
+.Header-wrapper {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* El menu de navegacion, lo alineamos horizontalmente y lo situamos al final del Header y lo centramos. Le damos un espacio entre 
+  elementos y aplicamos un margen. Ponemos la fuente de la tipografia y damos tamaño y color a esta. */
+.Header-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:flex-end;
+    align-items: center;
+    gap:30px;
+    margin: 0 1.875rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #e6b291;
+}
+/* Le damos un valor de escala al Header para cuando pase el cursor por las etiquetas. Y con un color mas fuerte que el anterior */
+.Header-li:hover{
+  transform: scale(1.05);
+  color: #E67C3A;
+}
+/* Le damos un tamaño al logotipo */
+.img-logo{
+  width: 25%;
+}
+/* Le damos valores para que funcione el modo responsive, como anchos de caja o tamaño de fuente */
+@media (max-width:900px){
+   
+  .Header{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Header-nav{
+      display:none;
+      width: 100%;
+  }
+
+  .Header-svg{
+      display: block;
+      fill:#e6b291;
+      width: 1.8rem;
+  } 
+  
+
+  .Header-nav.isActive{
+      display:block;
+      position: fixed;
+      
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background-color: #E5D2F0;
+      z-index: 9999;
+  }
+
+  .Header-ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 100px 0 0 0;
+    font-size: 2rem;
+  }
+}
+/* Le damos valores al titulo, con un tamaño, color y fuente a la tipografia. Tambien ponemos un margen por arriba y por abajo y alineamos el 
+texto al centro */
+.titulo{
+  font-size: 4rem;
+  color: rgb(255, 253, 253);
+  margin: 80px 0;
+  
+  font-family: 'brown_sugarregular';
+  text-align: center;
+  }
+/* Damos ancho completo a la etiqueta contenedora y damos fuente de la tipografia. Abrimos en display el valro grid, que contiene un fila 
+con dos columnas */
+.main{
+width: 100%;
+font-family: 'Montserrat', sans-serif;
+display: grid;
+grid-template-columns: repeat( 2, 1fr );
+}
+  /* Primera seccion y primera columna, con un color de fondo */
+.biografia{
+  grid-column: 1 / 1 ;
+  background-color: #E67C3A;
+}
+/* Damos al parrafo un tamaño a la tipografia, un color, un margen y un ancho que no ocupe el 100%, para que el texto respire por los lados y
+el texto lo justificamos para que no haya ruido visual y quede alineado   */
+.biografia-p{
+  font-size: 1rem;
+  color: #ffebcd;
+  margin:60px 0 0 50px;
+  text-align: justify;
+  width: 80%;
+}
+/* En la siguiente seccion, tenemos la segunda columna del grid, con un color de fondo diferente a la primera */
+.rrss{
+  grid-column: 2 / 2 ;
+  background-color: #C9A7F3;
+}
+/* Al texto de esta seccion le damos un tamaño, un color y una fuente a la tipografia. Tambien le damos un margen para que haya espacio */
+.rrss-p{
+  font-size: 3rem;
+  margin: 20px;
+  font-family: 'brown_sugarregular';
+  color: whitesmoke;
+}
+/* A los dos textos de esta seccion, le damos valor para que se alineen y a la tipografia, una fuente */
+.flechas{
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: 'brown_sugarregular';
+}
+
+/* A esta lista le damos un valor diferente a cada texto ya que tienen funciones distintas. A este primero le damos un margen y un tamaño de
+tipografia y un color */
+.rrss-li-a{
+  margin: 90px 0 0px 50px;
+  font-size: 40px;
+  color: rgb(246, 211, 239);
+}
+/* A este segundo elemento, igual pero le añadimos una transicion ya que tiene un enlace */
+.rrss-li-b{
+  margin: 90px 0 0px 50px;
+  font-size: 40px;
+  transition: transform 0.2s ease-in-out;
+  color: rgb(246, 211, 239);
+}
+/* Cuando el raton pase por encima de este texto se cambiara el color del texto y se hara mas grande */
+.rrss-li-b:hover{
+  transform: scale(1.1);
+  color: #E67C3A;
+}
+/* Dos imaganes a las cuales le damos un ancho, alto y margen, para que cuadre perfecto con los textos */
+.img-flecha{
+  width: 80px;
+  height:80px;
+  margin: 70px 0 0 50px;
+}
+/* A esta etiqueta le añadimos un color, un tamaño y un color a la linea contenedora de esta etiqueta y la hacemos con los bordes redondeados,
+le damos un ancho a la caja, un margen y un padding, para que haya espacio tanto por dentro como por fuera. Al cursor le decimos uqe cuando pase 
+por encima se cambie el puntero. Le damos a la fuente un tamaño, una tipografia y una transicion para cuando se pase el cursor. */
+.cv{
+  color:  purple;
+  border-radius: 2em;
+  border: 1px solid #800080;
+  width: 30%;
+  margin: 50px 0 50px 150px;
+  padding: 15px 10px 15px 10px; 
+
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  transition: transform 0.2s ease-in-out;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;  
+}
+/* Ya que la etiqueta es un enlace, le damos un color diferente para cuando se pase el cursor por encima y se agrande esta */
+.cv:hover{
+  transform: scale(1.05);
+  color: #E67C3A;
+  border: 1px solid #E67C3A;
+}
+/* Para el modo responsive le damos determinados valores para que cuadre todo correctamente, como un tamaño a la fuente distinto que se adapte a
+las medidas, a la etiqueta main, le decimo que el grid desaparezca con "flex" y que se acoplen una debajo de la otra. Y adaptanto todas las tipografias
+y anchos a las medidas de todas las etiquetas */
+@media (max-width:900px){
+  .titulo{
+    font-size: 2rem;
+  }
+
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .biografia{
+    padding: 0 0 40px 0;
+  }
+
+  .rrss{
+    width: 100%;
+  }
+
+  .rrss-p{
+    font-size: 2rem;
+  }
+  
+  .cv{
+    width: 50%;
+  }
+
+  .rrss-li-a{
+    font-size: 20px;
+  }
+}
+/* Otro responsive pero para otro tamaño con un ancho diferente para que no descuadre en cada una de las distintas medidas */
+@media (max-width:1045px){
+  
+  .cv{
+    width: 50%;
+  }
+}
+
+@media (max-width:900px){
+  .Header-nav{
+      display:none;
+      width: 100%;
+  }
+
+  .Header-svg{
+      display:block;
+  }
+
+  .Header-nav.isActive{
+      display:block;
+  }
+
+
+  .Header-ul{
+      flex-direction: column;
+  }
+}

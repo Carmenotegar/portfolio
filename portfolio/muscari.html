@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link  rel="icon" href="assets/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Carmen Otero Portfolio</title>
+    <link rel="stylesheet" href="css/muscari.css">
+    <link rel="stylesheet" href="css/webfontkit-20230331-102420/stylesheet.css">
+    <script src="./js/index.js" defer></script>
+   
+</head>
+
+<body>
+
+    <!-- Aquí esta el Header con el menu de navegacion y el icono de menu hamburguesa para cuando se haga responsive-->
+
+    <header class="Header">
+        <div class="Header-wrapper wrapper">
+            <h1 class="Header-h1">
+              <a href="home.html" title="home">
+                <img src="assets/logo.png" alt="Imagen" class="img-logo"
+              /></a>
+            </h1>
+    
+            <nav class="Header-nav">
+                <ul class="Header-ul">
+    
+                  <li class="Header-li">
+                    <a href="works.html" title="works">Works</a></li>
+    
+                  <li class="Header-li">
+                    <a href="me.html" title="me">Me</a></li>
+    
+                </ul></nav></div>
+    
+                <svg
+                class="Header-svg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                />
+            </svg>
+    </header>
+    
+    <!-- Para empezar he querido poner el titulo del proyecto, y despues una seccion en la que horizontalmente hablando, existirían dos apartados,
+    uno primero en el que mostraria un titulo y se mostraria "categoria" y abajo una descripcion. En el segundo apartado, al igual que el 
+  anterior, nos encontramos con un titulo "Descripcion" y abajo informacion sobre el proyecto-->
+
+    <main class="main">
+        <h2 class="titulo">MUSCARI</h2>
+
+<div class="descripcion">
+    <section class="descripcion-a">
+        <h3 class="descripcion-h3">Categoría</h3>
+        <p class="descripcion-p-a">Diseño y Desarrollo de un e-commerce</p>
+    </section>
+
+    <section class="descricpcion-b">
+      <h3 class="descripcion-h3">Descripcion</h3>
+        <p class="descripcion-p-b">Este proyecto se trata de una web que hice sobre un comercio online sobre productos de comestica, 
+          siendo uno de mis primeros, tanto diseños como desarrollo web. Ha sido un proyecto que le puse mucho empeño ya que fue mi primera web
+        creando a la vez la marca desde cero, creando así también todo diseño de cada producto. </p>
+    </section>
+</div>
+
+  <!-- Por último un titulo en el que indico que mostrare informacion sobre el proyecto y seguidamente imagenes sobre dicho proyecto. A las 
+  imagenes que no se ven al iniciar la pagina ponemos loading=lazy para una carga mas rapida de la pagina-->
+<div class="proyecto">
+<h2 class="titulo-p">Proyecto</h2>
+
+    <img src="assets/mockup.png" alt="Imagen" class="img-trabajo">
+    <img src="assets/web.png" alt="Imagen" class="img-trabajo" loading="lazy">
+    <img src="assets/collagemuscari.png" alt="Imagen" class="img-trabajo" loading="lazy">
+
+</div>
+    
+    </main>
+    </body>
+    </html>

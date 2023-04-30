@@ -1,0 +1,319 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #E5D2F0;
+  color: var(--negro);
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Esto es un elemento SVG que lo utilizaremos cuando la pagina se haga responsive, y aparecera mostrandonos el menu de navegacion */
+.Header-svg{
+    width: 20px;
+    display: none;
+}
+/* Le damos a la etiqueta contenedora del Header un ancho y aparte le damos un margin para dar unos espacios al rededor */
+.Header{
+    width: 95%;
+    padding: 30px 60px 0 60px;
+}
+/* Damos al Header, un ancho y lo alineamos horizontalmente todas las etiquetas, poniendole espacios */
+.Header-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+/* El menu de navegacion, lo alineamos horizontalmente y lo situamos al final del Header y lo centramos. Le damos un espacio entre 
+  elementos y aplicamos un margen. Ponemos la fuente de la tipografia y damos tamaño y color a esta. */
+.Header-ul{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:flex-end;
+  align-items: center;
+  gap:30px;
+  margin: 0 1.875rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #e6b291;
+}
+/* Le damos un valor de escala al Header para cuando pase el cursor por las etiquetas. Y con un color mas fuerte que el anterior */
+.Header-li:hover{
+transform: scale(1.05);
+color: #E67C3A;
+}
+/* Le damos un tamaño al logotipo */
+.img-logo{
+  width: 30%;
+}
+/* Le damos valores para que funcione el modo responsive, como anchos de caja o tamaño de fuente */
+@media (max-width:900px){
+   
+  .Header{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .Header-nav{
+      display:none;
+      width: 100%;
+  }
+
+  .Header-svg{
+      display: block;
+      fill:#e6b291;
+      width: 1.8rem;
+  } 
+
+  .Header-nav.isActive{
+      display:block;
+      position: fixed;
+      
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background-color: #E5D2F0;
+      z-index: 9999;
+  }
+
+  .Header-ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 100px 0 0 0;
+    font-size: 2rem;
+  }
+}
+/* Le damos a la caja contenedora principal un ancho completo*/
+.main{
+    width: 100%;
+} 
+/* Al titulo del proyecto le damos color, tamaño, tipografia y unos espacios con margen*/
+.titulo{
+    font-size: 5rem;
+    font-family: 'brown_sugarregular';
+    color: whitesmoke;
+    margin: 50px 0 0 40px;
+}
+/* A la etiqueta contendora de las descripciones, le damos un valor distinto que al resto de la pagina para que resalte, con un color de fondo, un 
+ancho completo para que no descuadre, y lo alineamos horizontalmente el contenido que se encuentra en el interior, tambien ponemos una altura 
+y damos espacio entre elementos*/
+.descripcion{
+    width: 100%;
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #E67C3A;
+    height: 30vh;
+    gap: 40px;
+}
+
+/* Le damos un valor a la primera etiqueta contenedora, para que se ubiquen los elementos en vertical, uno debajo del otro*/
+.descripcion-a{
+  display: flex;
+  flex-flow: row wrap;
+}
+/* Le damos valores para mostrar los elementos uno debajo de otro */
+.descripcion-b{
+  display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+/* Le damos a la etiqeuta del titulo tamaño,color y tipografia a la fuente. Damos margenes para tener espacios por todos lados. */
+.descripcion-h3{
+font-size: 2rem;
+color: blanchedalmond;
+font-family: 'brown_sugarregular';
+margin: 20px;
+}
+
+/* A esta etiqueta, la del primer texto, damos valores como color, tamaño, tipografia a la fuente y margenes y anchos*/
+.descripcion-p-a{
+font-size: 1rem;
+color: blanchedalmond; 
+font-family: 'Montserrat', sans-serif;
+margin: 20px;
+width: 100%;
+}
+/* Al segundo bloque de texto damos mismos valores que el anterior, variando el ancho de la caja y los espacios dados con el margen */
+.descripcion-p-b{
+  font-size: 1rem;
+  color: blanchedalmond;
+  font-family: 'Montserrat', sans-serif;
+  margin: 20px 0 0 0;
+  width: 70%;
+  }
+  /* Para el modo responsive, damos otros valores, ponemos los elentos en horizontal para que se vean los textos a la perfeccion y los alinamos al
+centro*/
+@media (max-width:1045px){
+  
+  .descripcion{
+    height:100%;
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .descripcion-h3{
+    max-width: 100px;
+    margin: auto;
+  }
+  .descripcion-p-a{
+    width: 80%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .descripcion-p-b{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+    text-align: justify;
+  }
+}
+/* Le damos a la caja contenedora de la siguiente seccion, valores para que se alineen los elementos en columna*/
+.proyecto{
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    justify-content: center;
+}
+/* Al titulo le damos tamaño, color, tipografia y espacios a la fuente*/
+.titulo-p{
+    font-size: 3rem;
+    font-family: 'brown_sugarregular';
+    color: whitesmoke;
+    margin: 50px 0 0 0;
+}
+/* Le damos tamaños y margenes a las imagenes que se muestran*/
+.img-trabajo{
+    width: 35%;
+    margin: 40px 0 40px 50px;
+    object-fit: cover;
+}

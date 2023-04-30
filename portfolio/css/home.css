@@ -1,0 +1,260 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color:#f2f1ed ;;
+  color: var(--negro);
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* A la etiqueta contenedora le damos tipografias, una altura y alineamos los elementos verticalmente, con una columna y ajustandolos al centro  */
+.Main{
+    font-family: 'brown_sugarregular';
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Damos color y tamaño de fuente, con margen para separar elementos  */
+.Main-h1{
+font-size: 8rem;
+color:#E67C3A;
+margin: 10px; 
+}
+/* Damos color y tamaño de fuente  */
+.Main-h1-a{
+  font-size: 7rem;
+  color:#b8a6cd;
+  }
+/* A la etiqueta contenedora de la seccion, le damos flex-nowrap, para que se alinee horizontalmente el contenido y centrandolo, damos espacio
+de 20px entre cada etiqeuta de la seccion y que ocupe el ancho completo */
+.Main-section{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Damos color, tamaño de fuente, tipografia, ponemos bordes de mismo color que tipografia, establecemos un ancho de caja, le decimos al cursor que cuando
+pase por esta etiqueta se abra una manita y una transicion para que cuando haga el efecto de hover sea de una manera secuencial  */
+.section{
+ 
+  color: orangered;
+  border: 1px solid orangered;
+  padding: 8px;
+  width: 10%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  transition: transform 0.2s ease-in-out;
+}
+/* Cuando pase por encima el cursor se agrande la etiqueta  */
+.section:hover{
+transform: scale(1.05);
+}
+/* Damos valores para el modo responsive, para versiones movil y tablet, ajustando factores que alteran el diseño, como por ejemplo el tamaño 
+de fuente, el ancho de la caja  */
+@media (max-width:900px){
+  .section{
+    font-size: 0.6rem;
+    width: 15%;
+  }
+  .Main-h1{
+    font-size: 3rem;
+    }
+  .Main-h1-a{
+    font-size: 3rem;
+    }
+}
+
+/* Para el fondo de la home, quería hacer algo interactivo, por lo que he puesto tres circulos con iconos, dandole una animacion para que 
+estos se vayan viendo y cuando haya pasado un tiempo desaparezcan  */
+.circulos{
+  position: fixed;
+  width:200%;
+  height:200%;
+  top:-50%;
+  left:-50%;
+  z-index: -1;
+  
+  background-color: #E5D2F0;
+  animation: circulo1 100s linear infinite both;
+}
+.circulos .circulo{
+ position: absolute;
+ width:50%;
+ height: 50%;
+ animation: circulo1 100s linear infinite both;
+}
+.circulos .circulo1{
+  top:0%;
+  left:0%;
+}
+/* Los keyframes los he usado para la rotacion de los cirulos mientras hace la animacion  */
+@keyframes circulo1{
+  from{
+    transform: rotate(0deg) scale(2);
+  }
+  to{
+    transform: rotate(360deg) scale(2)
+  }
+}
+/* Le damos colores a los circulos */
+.circulos .circulo1 .path{
+  fill: #E5D2F0;
+}
+/* Posicionamos los circulos  */
+.circulos .circulo2{
+  top:0%;
+  right:0%;
+}
+/* Los keyframes los he usado para la rotacion de los cirulos mientras hace la animacion  */
+@keyframes circulo2{
+  from{
+    transform: rotate(0deg) scale(2);
+  }
+  to{
+    transform: rotate(360deg) scale(2)
+  }
+}
+/* Le damos colores a los circulos */
+.circulos .circulo2 .path{
+  fill: #C9A7F3;
+}
+/* Posicionamos los circulos  */
+.circulos .circulo3{
+  bottom:0%;
+  left:0%;
+}
+/* Los keyframes los he usado para la rotacion de los cirulos mientras hace la animacion  */
+@keyframes circulo3{
+  from{
+    transform: rotate(0deg) scale(2);
+  }
+  to{
+    transform: rotate(360deg) scale(2)
+  }
+}
+/* Le damos colores a los circulos */
+.circulos .circulo3 .path{
+  fill: #E6C386;
+}
+
+

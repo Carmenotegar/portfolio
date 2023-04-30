@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="icon" href="assets/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Carmen Otero Portfolio</title>
+    <link rel="stylesheet" href="css/me.css">
+    <link rel="stylesheet" href="css/webfontkit-20230331-102420/stylesheet.css">
+    <script src="./js/index.js" defer></script>
+   
+</head>
+<body>
+
+  <!-- En la etiqueta Header he puesto mi logotipo y un menu de navegacion y todo alineado horizontalmente para que quede en la 
+       cabecera de la web, tambien he puesto un icono para el modo responsive y no quepan por ello las etiquetas-->
+
+  <header class="Header">
+      <div class="Header-wrapper wrapper">
+          <h1 class="Header-h1">
+            <a href="home.html" title="home" >
+              <img src="assets/logo.png" alt="Imagen" class="img-logo"/></a>
+          </h1>
+  
+          <nav class="Header-nav">
+              <ul class="Header-ul">
+
+                <li class="Header-li">
+                  <a title="works" href="works.html">Works</a></li>
+
+                <li class="Header-li">
+                  <a title="me" href="me.html">Me</a></li>
+
+              </ul></nav></div>
+  
+              <svg
+              class="Header-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+              />
+          </svg>
+  </header>
+
+
+  <!-- En la etiqueta "titulo" he dominado un h2 ya que es un título y un texto al que quería darle importancia, como titulo principal de la pagina-->
+<h2 class="titulo">¿Quieres saber un poco sobre mi?</h2>
+
+<!-- En este main he abierto una etiqueta contenedora que envuelve todas las etiquetas de las dos secciones que a continuacion muestro. Organizado
+de esta manera: 
+    1. MAIN:
+    1.2. Biografia
+     1.2.1. parrafo
+     1.2.2. parrafo
+    1.3. RRSS
+     1.3.1.titulo
+     1.3.2. lista rrss
+     1.3.3. boton cv
+
+ -->
+<main class="main">
+<div class="biografia">
+<p class="biografia-p">Hola! Encantada de conocerte, me alegro que hayas llegado hasta aqui y que te haya gustado mi perfil :) </p>
+  <p class="biografia-p">Primero te voy a contar un poco quien soy de dónde vengo. Soy una chica llamada Carmen, que viene de Sevilla, 
+    aunque viviendo en Madrid. Me gusta mucho bailar, cantar y disfrutar de la vida. Soy una persona que le pone mucha vivacidad en las cosas 
+    que me apasionan. Me encanta la creatividad y estar creando nuevas ideas todo el dia, ya sea en el metro o en la ducha, siempre pensando en 
+    nuevos proyectos que podrían surgir y como se llevarían a cabo. 
+  </p>
+  <p class="biografia-p">Mi trayectoria en el mundo digital empezó cuando me llegó la hora de tener que elegir una rama y estudiar lo que más me 
+    gustara, andaba perdidisima, no encontraba exactamente lo que me gustaba de verdad. Además mis amigos y familiares no me lo ponían fácil, 
+    la mayoría tienen la carrera de economistas… Investigando y observando en lo que pasaba más tiempo en mi día a día y se me pasaran las horas 
+    volando, ahi me di cuenta que el mundo digital con el diseño era mi camino que solo acababa de empezar. 
+    Estudie el Grado de Comunicación Digital y Diseño Gráfico, la combinación perfecta que hizo que este camino solo acabara de empezar. </p>
+  </div>
+
+<section class="main-section rrss">
+<h2 class="rrss-p">Sigue conociendome por...</h2>
+
+<div class="flechas">
+<ul class="flecha-ul">
+    <li class="flecha-li"> <img src= "assets/flecha.png" class="img-flecha" alt="flecha"></li>
+    <li class="flecha-li"> <img src= "assets/flecha.png" class="img-flecha" alt="flecha"></li>
+    </ul>
+
+<ul class="rrss-ul">
+
+  <!-- Querría poner este enlace que llevara directamente a mandar un correo, pero no puedo por las normas del sistema de evaluacion, 
+    asi que solo pondre mi correo. Supuesta linea:
+    <li class="rrss-li"><a href="mailto:carmenog00@gmail.com">Gmail</li></a> -->
+
+
+<li class="rrss-li-a">carmenog00@gmail.com</li>
+<li class="rrss-li-b"><a href="https://www.linkedin.com/in/carmen-otero-7a99381a5/"  target="_blank" >Linkedin</a></li>
+</ul>
+</div>
+
+<a class="cv" title="curriculum" href="file:///C:/Users/admin/Desktop/CV%20Carmen%20Otero.pdf" target="_blank" rel=noreferrer download>Download CV</a>
+</section>
+</main>
+
+  </body>
+  </html>
